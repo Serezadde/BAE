@@ -4,19 +4,14 @@
 include "../../componentes/head.php";
 
 
-// Verificar si el usuario ya está autenticado, si lo está, redirigirlo a la página de administración
-// (Asegúrate de ajustar esta lógica según cómo manejes la autenticación en tu aplicación)
-// Ejemplo:
-// if (usuario_autenticado()) {
-//     header("Location: vista/Administración/administración_menu.php");
-//     exit();
-// }
 ?>
 <head>
     <title>Iniciar Administración</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-image: url('img/inicio.jpg');
+            background-size: cover;
         }
         .container-fluid {
             text-align: center;
@@ -51,7 +46,7 @@ include "../../componentes/head.php";
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Iniciar Administración</h1>
+        <h1>Inicio de sesión:</h1>
         <?php
         // Si el usuario no está autenticado, mostrar el formulario de inicio de sesión
         include "../../controlador\Acceso\inicio_sesion.php"; 

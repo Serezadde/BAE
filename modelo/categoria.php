@@ -1,23 +1,22 @@
 <?php
 
-require_once "bd.php";
+
 require_once "conexion.php";
+require_once "producto.php";
 
 
 class Categoria{
     private $db;
     private $id;
     private $nombre;
+    private $conexion;
 
 
 
 
 
-
-    function __construct()
-    {
-        $bd = new bd();
-        $this->db = $bd->conectarBD();
+    public function __construct($conexion) {
+        $this->conexion = $conexion;
     }
 
     function obtenerListadoCategoria()
@@ -39,38 +38,40 @@ class Categoria{
         }
     }
 
-    function crearCategoria()
-    {
-
-        try {
-
-            $queryInsertar = "INSERT INTO categoria (id, nombre)
-                                 VALUES ( :id, :nombre)";
-            $instanciaDB = $this->db->prepare($queryInsertar);
-            $instanciaDB->bindParam(":id", $this->id);
-            $instanciaDB->bindParam(":nombre", $this->nombre);
-           
-            $instanciaDB->execute();
-
-            if ($instanciaDB) {
-                header("Location:categoria.php");
-            } else {
-                echo "Ocurrió un error inesperado";
-            }
-        } catch (Exception $ex) {
-            echo "Ocurrió un error: " . $ex->getMessage();
-            return null;
+    public function crearCategoria($nombre) {
+        
+        $sql = $this->conexion->query("INSERT INTO categoria(nombre) VALUES ('$nombre')");
+        if ($sql === TRUE) {
+            $nuevo_id = $this->conexion->insert_id;
+            return array('success' => true, 'mensaje' => 'Categoría creada correctamente, ID: ' . $nuevo_id);
+        } else {
+            return array('success' => false, 'mensaje' => 'Error al registrar: ' . $this->conexion->error);
         }
     }
 
 
-    function borrarCategoria()
-    {
-        $queryBorrar = "DELETE FROM categoria WHERE id = :idcategoria";
-        $instanciaDB = $this->db->prepare($queryBorrar);
-        $instanciaDB->bindParam(":idcategoria", $this->id);
-        return $instanciaDB->execute();
+    public function eliminarCategoria($id) {
+
+        $sql = $this->conexion->query("DELETE FROM categoria WHERE id='$id'");
+        if ($sql == 1) {
+            return true; 
+        } else {
+            return false; 
+        }
     }
+
+    public function editarCategoria($id, $nombre) {
+        $nombre = $this->conexion->real_escape_string($nombre);
+
+        $sql = $this->conexion->query("UPDATE categoria SET nombre='$nombre' WHERE id='$id'");
+        if ($sql == 1) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+
+
 
 
     public function getNombre()

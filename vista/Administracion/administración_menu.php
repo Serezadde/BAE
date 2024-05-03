@@ -4,7 +4,7 @@
 include "../../componentes/head.php";
 ?>
 <head>
-    <title>Administración</title>
+    <title>Administración:</title>
     <style>
         body {
             font-family: Arial, sans-serif;

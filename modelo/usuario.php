@@ -25,12 +25,9 @@ class Usuario
         $this->db = $bd->conectarBD();
     }
 
-    //metodos que necesito: obtenerListadousuarios()
+ 
 
 
-    function obtenerListadousuarios()
-    {
-    }
 
 
     function guardar()
@@ -180,13 +177,14 @@ class Usuario
         $instanciaDB->execute();
 
         if ($instanciaDB->rowCount() > 0) {
-            return "Contraseña actualizada correctamente";
+             echo '<div class="alert alert-success">Contraseña actualizada correctamente</div>';
         } else {
-            return "La contraseña actual no coincide con la registrada en la base de datos";
-        }
+            echo '<div class="alert alert-warning">La contraseña actual no coincide con la registrada en la base de datos</div>';
+      }
     } catch (Exception $ex) {
-        // Manejar errores aquí o simplemente dejar que se propaguen hacia arriba
-        return "Ocurrió un error al actualizar la contraseña";
+        // Manejar errores aquí 
+        echo '<div class="alert alert-warning">Ocurrió un error al actualizar la contraseña</div>';
+  
     }
 }
 

@@ -11,6 +11,8 @@ include "modelo/usuario.php";
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-image: url('img/titulo.jpg');
+            background-size: cover;
         }
 
         .container-fluid {
@@ -19,7 +21,7 @@ include "modelo/usuario.php";
         }
 
         .btn {
-            font-size: 16px;
+            font-size: 20px;
             padding: 10px 20px;
             margin: 10px;
             border: none;
@@ -35,7 +37,7 @@ include "modelo/usuario.php";
         }
 
         .label {
-            font-size: 14px;
+            font-size: 15px;
             color: black;
         }
     </style>
@@ -52,9 +54,9 @@ include "modelo/usuario.php";
             <br>
             <div class="label">Christian José Quintana Perera, Fernando Zerpa Niño y Moises Pestano</div>
             <br>
-            <div class="label">Curso: 1º</div>
+            <div class="label">Curso: 1º DAW</div>
             <br>
-            <div class="label">Ciclo: DAW</div>
+            <div class="label">Base de datos</div>
         </div>
     </div>
 </body>

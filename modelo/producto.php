@@ -1,40 +1,41 @@
 <?php
 
-require_once "bd.php";
+require_once "conexion.php";
+require_once "categoria.php";
 
 
 class Producto
 {
-    private $db;
-    private $id;
-    private $nombre;
-    private $precio;
-    private $id_categoria;
+
+    private $conexion;
 
 
 
+    public function __construct($conexion) {
+        $this->conexion = $conexion;
+    }
+
+    public function eliminarProducto($id) {
+        $id = $this->conexion->real_escape_string($id);
+
+        $sql = $this->conexion->query("DELETE FROM producto WHERE id='$id'");
+        if ($sql == 1) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
 
 
 
+    public function editarProducto($id, $nombre, $precio, $id_categoria) {
 
-
-function obtenerListadoCategoria(){
-    
+        $sql = $this->conexion->query("UPDATE producto SET nombre='$nombre', precio='$precio', id_categoria='$id_categoria' WHERE id='$id'");
+        if ($sql === TRUE) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
 }
 
-public function getId()
-{
-    return $this->id;
-}
-
-/**
- * @param mixed $id 
- * @return self
- */
-public function setId($id): self
-{
-    $this->id = $id;
-    return $this;
-}
-
-}

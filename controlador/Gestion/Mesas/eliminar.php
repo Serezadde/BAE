@@ -1,16 +1,16 @@
 <?php 
-if(!empty($_GET["id"])){
+require_once "../../../modelo/conexion.php";
+require_once "../../../modelo/mesas.php";
 
-$id=$_GET["id"];    
+$mesas = new Mesas($conexion); 
 
-$sql=$conexion->query("DELETE FROM mesa WHERE id= '$id'");
+if (!empty($_GET["id"])) {
+    $id = $_GET["id"];
 
-if($sql==1){
-    echo "<div class= 'alert alert-success'>Categoria eliminada</div>";
-
-}else{
-    echo "<div class= 'alert alert-danger'>Ocurrio Error</div>";
-}
-
+    if ($mesas->eliminarMesa($id)) {
+        echo '<div class="alert alert-success">Mesa eliminada</div>';
+    } else {
+        echo '<div class="alert alert-danger">Ocurrió un error</div>';
+    }
 }
 

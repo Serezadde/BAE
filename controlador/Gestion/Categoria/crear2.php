@@ -1,17 +1,21 @@
 <?php
+include "../../../modelo/conexion.php";
+include "../../../modelo/categoria.php";
+
+$categoria = new Categoria($conexion); // Crea una instancia de la clase Categoria
 
 if (!empty($_POST["btncrear"])) {
     if (!empty($_POST["nombre"])) {
         $nombre = $_POST["nombre"];
 
-        $sql = $conexion->query("INSERT INTO categoria(nombre) VALUES ('$nombre')");
-        if ($sql === TRUE) {
-            $nuevo_id = $conexion->insert_id;
-            echo '<div class="alert alert-success">Categoria creada correctamente, ID: '.$nuevo_id.'</div>';
+        $resultado = $categoria->crearCategoria($nombre); // Llama a la función crearCategoria del modelo
+
+        if ($resultado['success']) {
+            echo '<div class="alert alert-success">' . $resultado['mensaje'] . '</div>';
         } else {
-            echo '<div class="alert alert-danger">Error al registrar: '.$conexion->error.'</div>';
+            echo '<div class="alert alert-danger">' . $resultado['mensaje'] . '</div>';
         }
     } else {
-        echo '<div class="alert alert-warning">Campo vacio</div>';
+        echo '<div class="alert alert-warning">Campo vacío</div>';
     }
 }

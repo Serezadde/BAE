@@ -7,23 +7,22 @@
   <script src="https://kit.fontawesome.com/aec7d72014.js" crossorigin="anonymous"></script>
 
   <style>
-  body {
-            font-family: Arial, sans-serif;
-        }
-  tbody tr {
-            cursor: pointer;
-        }
-    </style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    tbody tr {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
   <script>
-    function eliminar(){
-      var respuesta=confirm("¿Estas seguro que quieres eliminar?");
-return respuesta;
+    function eliminar() {
+      var respuesta = confirm("¿Estas seguro que quieres eliminar?");
+      return respuesta;
     }
-
-
   </script>
   <h1 class="text-center p-3">Administración de Categorías</h1>
   <?php
@@ -63,7 +62,7 @@ return respuesta;
               <td><?= $datos->id ?></td>
               <td><?= $datos->nombre ?></td>
               <td>
-              <a href="../../../vista/Gestion/Categoria/editar_cat.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="../../../vista/Gestion/Categoria/editar_cat.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
 
                 <a onclick="return eliminar()" href="categoria2.php?id=<?= $datos->id ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
               </td>

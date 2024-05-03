@@ -18,7 +18,8 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
         exit();
     } else {
         // Credenciales inválidas, mostrar un mensaje de error
-        echo "Credenciales inválidas. Por favor, inténtelo de nuevo.";
+        echo '<div class="alert alert-warning">Credenciales inválidas. Por favor, inténtelo de nuevo</div>';
+    
     }
 }
 

@@ -1,15 +1,17 @@
 <?php 
-if(!empty($_GET["id"])){
 
-$id=$_GET["id"];    
+require "../../../modelo/conexion.php";
+require "../../../modelo/producto.php";
 
-$sql=$conexion->query("DELETE FROM producto WHERE id= '$id'");
+$producto = new Producto($conexion); 
 
-if($sql==1){
-    echo "<div class= 'alert alert-success'>Categoria eliminada</div>";
+if (!empty($_GET["id"])) {
+    $id = $_GET["id"];
 
-}else{
-    echo "<div class= 'alert alert-danger'>Ocurrio Error</div>";
+    if ($producto->eliminarProducto($id)) {
+        echo '<div class="alert alert-success">Producto eliminado</div>';
+    } else {
+        echo '<div class="alert alert-danger">Ocurrió un error</div>';
+    }
 }
 
-}
