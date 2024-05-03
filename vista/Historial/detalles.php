@@ -12,6 +12,7 @@ include "../../modelo/util.php";
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-size: 16px; /* Ajusta el tamaño de la fuente del cuerpo */
         }
 
         .container {
@@ -21,6 +22,7 @@ include "../../modelo/util.php";
 
         h1 {
             text-align: center;
+            font-size: 24px; /* Ajusta el tamaño de la fuente del título */
         }
 
         .details {
@@ -38,6 +40,7 @@ include "../../modelo/util.php";
 
         .details-column h2 {
             margin-top: 0;
+            font-size: 18px; /* Ajusta el tamaño de la fuente de los subtítulos */
         }
 
         table {
@@ -51,6 +54,7 @@ include "../../modelo/util.php";
             border: 1px solid #ccc;
             padding: 8px;
             text-align: left;
+            font-size: 16px; /* Ajusta el tamaño de la fuente de la tabla */
         }
 
         table th {
@@ -67,11 +71,15 @@ include "../../modelo/util.php";
             text-decoration: none;
             text-align: center;
             border-radius: 5px;
+            font-size: 16px; /* Ajusta el tamaño de la fuente de los botones */
         }
 
         .btn:hover {
             background-color: #0056b3;
         }
+        .details p {
+        font-size: 18px; /* Ajusta el tamaño de la fuente para los párrafos dentro de .details */
+    }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/aec7d72014.js" crossorigin="anonymous"></script>
@@ -80,7 +88,7 @@ include "../../modelo/util.php";
 
 <body>
     <div class="container">
-        <h1>Detalles del Pedido</h1>
+        <h1>Detalles del Pedido:</h1>
         <?php
         include "../../modelo/conexion.php";
 
@@ -124,7 +132,7 @@ include "../../modelo/util.php";
                     </div>
                     <div class="details-column">
                         <h2>Precio Total</h2>
-                        <p><?php echo $fila["precio_total"]; ?></p>
+                        <p><?php echo $fila["precio_total"]; ?>€ </p>
                     </div>
                 </div>
         <?php

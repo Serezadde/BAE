@@ -47,7 +47,7 @@ include "modelo/usuario.php";
 
             <h1>RESTAURANTE VILLA DE AGÜIMES</h1>
 
-            <a href="sistema_pedidos.php"><button button class="btn btn-primary">Sistema de Pedidos</button></a>
+            <a href="inicio.php"><button button class="btn btn-primary">Sistema de Pedidos</button></a>
             <a href="vista/Acceso/inicio_sesion.php"><button button class="btn btn-primary">Administración</button></a>
             <br>
             <div class="label">Christian José Quintana Perera, Fernando Zerpa Niño y Moises Pestano</div>

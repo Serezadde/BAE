@@ -10,16 +10,29 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      font-size: 16px; /* Ajusta el tamaño de la fuente del cuerpo */
     }
 
     tbody tr {
       cursor: pointer;
     }
+
+    .form-label, .form-control {
+      font-size: 17px; /* Ajusta el tamaño de la fuente del formulario */
+    }
+
+    .btn {
+      font-size: 17px; /* Ajusta el tamaño de la fuente de los botones */
+    }
+
+    #productosTable th, #productosTable td {
+      font-size: 17px; /* Ajusta el tamaño de la fuente de la tabla */
+    }
   </style>
 </head>
 
 <body>
-  <h1 class="text-center p-3">Crear Productos</h1>
+  <h1 class="text-center p-3">Productos:</h1>
   <script>
     function eliminar() {
       var respuesta = confirm("¿Estas seguro que quieres eliminar?");
@@ -35,6 +48,7 @@
   ?>
   <div class="container-fluid row">
     <div class="col-md-4">
+      <h2 class="text-left p-3">Crear Producto:</h2>
       <form name="CrearCatForm" method="post">
         <div class="mb-3">
           <label for="exampleInputNombre" class="form-label">Nombre:</label>
@@ -48,10 +62,10 @@
         <div>
 
           <?php
-include "../../../controlador/Gestion/Producto/crear.php";
+          include "../../../controlador/Gestion/Producto/crear.php";
 
           include "../../../componentes/seleccioncategoria.php";
-          
+
           ?>
         </div>
         <button type="submit" class="btn btn-primary" name="btncrear" value="okcrear">Crear</button>
@@ -80,7 +94,7 @@ include "../../../controlador/Gestion/Producto/crear.php";
             <tr>
               <td><?= $datos->id ?></td>
               <td><?= $datos->nombre ?></td>
-              <td><?= $datos->precio ?></td>
+              <td><?= $datos->precio ?>€</td>
               <td><?= $datos->id_categoria ?></td>
               <td>
                 <a href="../../../vista/Gestion/Producto/editar_prod.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>

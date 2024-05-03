@@ -64,14 +64,9 @@ CREATE TABLE `comanda` (
 --
 
 INSERT INTO `comanda` (`id`, `id_pedido`) VALUES
-(1, 1),
-(2, 1),
-(3, 2),
-(4, 2),
-(5, 3),
-(6, 3),
-(7, 4),
-(8, 4);
+(9, 5), -- Comanda del Pedido 1
+(10, 6), -- Comanda del Pedido 2
+(11, 7); -- Comanda del Pedido 3
 
 -- --------------------------------------------------------
 
@@ -90,31 +85,15 @@ CREATE TABLE `comanda_producto` (
 --
 
 INSERT INTO `comanda_producto` (`id_comanda`, `id_producto`, `cantidad`) VALUES
-(1, 1, 2),
-(1, 2, 1),
-(1, 4, 1),
-(1, 10, 1),
-(1, 11, 1),
-(2, 13, 1),
-(2, 16, 1),
-(3, 2, 1),
-(3, 3, 1),
-(3, 4, 1),
-(3, 5, 1),
-(4, 6, 1),
-(4, 8, 1),
-(5, 1, 1),
-(5, 2, 1),
-(5, 3, 1),
-(5, 4, 1),
-(6, 13, 1),
-(6, 14, 1),
-(7, 1, 1),
-(7, 2, 1),
-(7, 3, 1),
-(7, 4, 1),
-(8, 13, 1),
-(8, 14, 1);
+(9, 1, 2),  -- CocaCola
+(9, 2, 1),  -- CocaCola Zero
+(9, 4, 1),  -- Fanta Limon
+(10, 13, 1), -- Bocata Jamon Serrano
+(10, 14, 1), -- Bocata Lomo
+(10, 16, 1), -- Bocata Tortilla
+(11, 5, 1),  -- Red Bull
+(11, 8, 1),  -- Mahou Sin
+(11, 9, 1);  -- Mahou Negra
 
 -- --------------------------------------------------------
 
@@ -155,10 +134,12 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id`, `precio`, `en_curso`, `fecha`, `id_mesa`) VALUES
-(1, 21, 'false', '2024-04-10', 1),
-(2, 13, 'false', '2024-04-10', 1),
-(3, 17, 'false', '2024-04-11', 1),
-(4, 17, 'true', '2024-04-15', 1);
+(5, 25, 'false', '2024-05-01', 1), 
+(6, 30, 'true', '2024-05-02', 2),  
+(7, 20, 'true', '2024-05-03', 2); 
+
+UPDATE `pedido` SET `id_mesa` = 1 WHERE `id` = 5;
+UPDATE `pedido` SET `id_mesa` = 2 WHERE `id` IN (6, 7);
 
 -- --------------------------------------------------------
 

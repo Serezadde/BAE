@@ -9,6 +9,10 @@ include "../../modelo/util.php";
     <style>
         body {
             font-family: Arial, sans-serif;
+            font-size: 16px; /* Aumenta el tamaño de la fuente del cuerpo */
+        }
+        h2 {
+            font-size: 24px; /* Aumenta el tamaño de los encabezados */
         }
         .container {
             text-align: center;
@@ -31,7 +35,7 @@ include "../../modelo/util.php";
             background-color: #f2f2f2;
         }
         .btn {
-            font-size: 16px;
+            font-size: 18px; /* Aumenta el tamaño de los botones */
             padding: 10px 20px;
             margin: 10px;
             border: none;
@@ -69,7 +73,7 @@ include "../../modelo/util.php";
           ?>
             <tr>
               <td><?= $datos->id ?></td>
-              <td><?= $datos->precio ?></td>
+              <td><?= $datos->precio ?> €</td>
               <td><?= obtenerIcono($datos->en_curso) ?></td>
               <td><?= $datos->fecha ?></td>
               <td><?= $datos->id_mesa ?></td>
