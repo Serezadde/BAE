@@ -71,7 +71,7 @@ include "../../modelo/util.php";
             text-decoration: none;
             text-align: center;
             border-radius: 5px;
-            font-size: 16px; /* Ajusta el tamaño de la fuente de los botones */
+            font-size: 25px; 
         }
 
         .btn:hover {
@@ -196,7 +196,7 @@ include "../../modelo/util.php";
                 ?>
             </tbody>
         </table>
-        <a href="../Historial/historial.php"><button button class="btn btn-primary">Atrás</button></a>
+        <a href="../Historial/historial.php"><button button class="btn btn-primary" style="font-size: 18px" >Atrás</button></a> 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

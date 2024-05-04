@@ -15,8 +15,8 @@ class Producto
         $this->conexion = $conexion;
     }
 
-    public function eliminarProducto($id) {
-        $id = $this->conexion->real_escape_string($id);
+    function eliminarProducto($id) {
+ 
 
         $sql = $this->conexion->query("DELETE FROM producto WHERE id='$id'");
         if ($sql == 1) {
@@ -28,7 +28,7 @@ class Producto
 
 
 
-    public function editarProducto($id, $nombre, $precio, $id_categoria) {
+    function editarProducto($id, $nombre, $precio, $id_categoria) {
 
         $sql = $this->conexion->query("UPDATE producto SET nombre='$nombre', precio='$precio', id_categoria='$id_categoria' WHERE id='$id'");
         if ($sql === TRUE) {

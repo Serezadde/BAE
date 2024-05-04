@@ -134,9 +134,9 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id`, `precio`, `en_curso`, `fecha`, `id_mesa`) VALUES
-(5, 25, 'false', '2024-05-01', 1), 
-(6, 30, 'true', '2024-05-02', 2),  
-(7, 20, 'true', '2024-05-03', 2); 
+(5, 8, 'false', '2024-05-01', 1), 
+(6, 13, 'true', '2024-05-02', 2),  
+(7, 8, 'true', '2024-05-03', 2); 
 
 UPDATE `pedido` SET `id_mesa` = 1 WHERE `id` = 5;
 UPDATE `pedido` SET `id_mesa` = 2 WHERE `id` IN (6, 7);

@@ -21,9 +21,7 @@ if(isset($_GET['id'])) {
             LEFT JOIN producto pr ON cp.id_producto = pr.id
             WHERE p.id = $id_pedido
             GROUP BY p.id";
-
     $resultado = $conexion->query($sql);
-
     if ($resultado->num_rows > 0) {
         $pedido = $resultado->fetch_assoc();
 
@@ -42,7 +40,6 @@ if(isset($_GET['id'])) {
 
     // Cerrar la conexión a la base de datos
     $conexion->close();
-
 } else {
     // Si no se proporcionó ningún ID de pedido, puedes mostrar un mensaje de error o redirigir al usuario a otra página.
     echo "No se proporcionó ningún ID de pedido.";

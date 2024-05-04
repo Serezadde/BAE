@@ -6,7 +6,7 @@ require_once "producto.php";
 
 
 class Categoria{
-    private $db;
+
     private $id;
     private $nombre;
     private $conexion;
@@ -19,6 +19,7 @@ class Categoria{
         $this->conexion = $conexion;
     }
 
+    /*
     function obtenerListadoCategoria()
     {
         try {
@@ -37,6 +38,8 @@ class Categoria{
             return null;
         }
     }
+    */
+
 
     public function crearCategoria($nombre) {
         
@@ -61,7 +64,7 @@ class Categoria{
     }
 
     public function editarCategoria($id, $nombre) {
-        $nombre = $this->conexion->real_escape_string($nombre);
+       
 
         $sql = $this->conexion->query("UPDATE categoria SET nombre='$nombre' WHERE id='$id'");
         if ($sql == 1) {

@@ -3,16 +3,19 @@
 <?php
 include "../../componentes/head.php";
 ?>
+
 <head>
     <title>Administración:</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
+
         .container-fluid {
             text-align: center;
             margin-top: 50px;
         }
+
         .btn {
             font-size: 16px;
             padding: 10px 20px;
@@ -24,9 +27,11 @@ include "../../componentes/head.php";
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .btn:hover {
             background-color: #0056b3;
         }
+
         .label {
             font-size: 24px;
             font-weight: bold;
@@ -34,9 +39,10 @@ include "../../componentes/head.php";
         }
     </style>
 </head>
+
 <body>
     <div class="container-fluid">
-        
+
         <h1>Administración</h1>
         <a href="../Gestion/Categoria/categoria2.php"><button class="btn btn-primary">Gestión de Categorías</button></a>
         <br>
@@ -51,4 +57,5 @@ include "../../componentes/head.php";
         <a href="../../inicio.php"><button class="btn btn-primary">Atrás</button></a>
     </div>
 </body>
+
 </html>

@@ -1,17 +1,16 @@
 <?php 
-if(!empty($_GET["id"])){
+require_once "../../../modelo/conexion.php";
+require_once "../../../modelo/categoria.php";
 
-$id=$_GET["id"];    
+$categoria = new Categoria($conexion); 
+if (!empty($_GET["id"])) {
+    $id = $_GET["id"];
 
-$sql=$conexion->query("DELETE FROM categoria WHERE id= '$id'");
-
-if($sql==1){
-    echo "<div class= 'alert alert-success'>Categoria eliminada</div>";
-
-}else{
-    echo "<div class= 'alert alert-danger'>Ocurrio Error</div>";
-}
-
+    if ($categoria->eliminarCategoria($id)) {
+        echo '<div class="alert alert-success">Categoría eliminada</div>';
+    } else {
+        echo '<div class="alert alert-danger">Ocurrió un error</div>';
+    }
 }
 
 

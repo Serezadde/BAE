@@ -7,7 +7,7 @@ function obtenerIcono($valor) {
             return '<i class="fa-solid fa-check"></i>'; // Icono de check
             break;
         case 'false':
-            return '<i class="fa-solid fa-circle-xmark"></i>'; // Icono de times
+            return '<i class="fa-solid fa-circle-xmark"></i>'; // Icono de uncheck
             break;
         default:
             return $valor;
